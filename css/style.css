@@ -4,17 +4,22 @@
     box-sizing: border-box;
 }
 
-.container {
-    width: 100%;
-    height: 100vw;
+body {
     background-color: black;
     font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;  
 }
 
 /* HEADER */
 header{
     display: flex;
     justify-content: flex-end;
+    align-items: center;
+    height: 80px;
 }
 
 header div {
@@ -40,12 +45,14 @@ main {
 }
 
 .caller {
-    width: calc(100% / 7);
+    width: calc(97% / 7);
     height: 120px;
     position: relative;
     background-image: url('https://picsum.photos/200/300');
     background-size: cover;
     background-position: center;
+    margin-left: 5px;
+    margin-bottom: 10px;
 }
 
 .caller-id {
@@ -55,4 +62,28 @@ main {
     color: white;
     background-color: rgba(92, 90, 90, 0.6);
     padding: 4px;
+}
+
+footer {
+    width: 100%;
+    height: 70px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;    
+    color: white;
+    background-color: #4a4a4a7b;
+}
+footer i {
+    padding: 0 10px;
+}
+
+footer .right {
+    line-height: 70px;
+    color: red;
+    background-color: #4a4a4a;
+    padding: 0 10px;
 }
