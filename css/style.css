@@ -5,29 +5,29 @@
 }
 
 body {
+    width: 100%;
+    height: 100vh; 
     background-color: black;
     font-family: 'Open Sans', sans-serif;
 }
 
-.container {
-    width: 100%;
-    height: 100vh;  
-}
-
 /* HEADER */
+
 header{
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    height: 80px;
+    height: 50px;
+    text-align: right;
+    padding: 5px;
+    /* Tolto flex perché non necessario e impostata un'altezza fissa */
 }
 
-header div {
+header button {
+    border: none;
     color: white;
     background-color: #4a4a4a;
     border-radius: 5px;
-    margin: 10px 5px;
     padding: 5px 10px;
+    /* margin: 10px 5px;  Tolto perché aggiunto padding nell'header*/
+    
 }
 
 .view i {
@@ -37,24 +37,30 @@ header div {
 /* MAIN */
 
 main {
-    height: 100px;
-    width: 70%;
-    margin: auto;
-    display: flex;
-    flex-wrap: wrap;
+    height: calc(100vh - 120px);
+    /* Height calcolata sottraendo header e footer */
+    /* width: 70%;
+    margin: auto;  Tolto perché applicato justify-content al div contenitore delle img*/
     margin-top: 50px;
     overflow-y: scroll;
 }
 
+ .gallery { /* Aggiunto contenitore dentro main per contenere le card */
+    height: 100%; /* di main */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start; /* Per rimuovere margini inferiori eccessivi alle img */
+}
+
 .caller {
-    width: calc(97% / 7);
-    height: 120px;
+    width: 250px; /* Inserita dimensione fissa invece di calc */
+    height: 150px;
     position: relative;
     background-image: url('https://picsum.photos/200/300');
     background-size: cover;
     background-position: center;
-    margin-left: 5px;
-    margin-bottom: 10px;
+    margin: 5px;
 }
 
 .caller-id {
@@ -67,25 +73,50 @@ main {
 }
 
 footer {
-    width: 100%;
-    height: 70px;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    z-index: 999;
+    height: 70px; 
     display: flex;
     justify-content: space-between;
-    align-items: center;    
+    align-items: center;
     color: white;
-    background-color: #4a4a4a7b;
-}
-footer i {
-    padding: 0 10px;
+    background-color: #4a4a4a7b; 
+    
+    /* position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 999; 
+    
+    Tolto fixed perché improprio*/
 }
 
-footer .right {
-    line-height: 70px;
+.left, .center, .right {
+    display: flex;
+    height: 100%;
+    flex-shrink: 0;
+}
+
+.icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    /* Le dimensioni delle icon aggiunte direttamente in html con fa-2x */
+}
+
+
+footer .green {
+    color: lightgreen;
+}
+
+.right  button {
     color: red;
     background-color: #4a4a4a;
-    padding: 0 10px;
+    padding: 10px;
+    border: none;
+    height: 100%;
+    display: inline-block;
+}
+
+.icon span {
+    font-size: 14px;
+    padding-top: 7px;
 }
