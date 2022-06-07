@@ -37,11 +37,13 @@ header div {
 /* MAIN */
 
 main {
-    width: 1200px;
+    height: 100px;
+    width: 70%;
     margin: auto;
     display: flex;
     flex-wrap: wrap;
     margin-top: 50px;
+    overflow-y: scroll;
 }
 
 .caller {
